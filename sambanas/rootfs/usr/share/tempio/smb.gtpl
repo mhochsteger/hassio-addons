@@ -34,7 +34,7 @@
    {{ $log_level := dict "trace" "5" "debug" "4" "info" "3" "notice" "2" "warning" "1" "error" "1"  "fatal" "1" -}}
    log level = {{ .log_level | default "warning" | get $log_level }}
 
-   bind interfaces only = yes
+   bind interfaces only = no
    interfaces = {{ .interfaces | join " " }} {{ .docker_interface | default " "}}
    hosts allow = {{ .allow_hosts | join " " }} {{ .docker_net | default " " }}
 
